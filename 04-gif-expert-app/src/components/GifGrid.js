@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 export const GifGrid = ({ category }) => {
+    useEffect(() => {
+        getGifs();
+    }, []);
     const getGifs = async () => {
         const apiKey = "h1749A5kBlb9kO8jerkATHG63RNkZvNz";
         const serie = "Rick+and+Morty";
@@ -16,9 +19,9 @@ export const GifGrid = ({ category }) => {
             };
         });
         console.log(gifs);
+        //SetImg
     };
 
-    getGifs();
     return (
         <div>
             <h3> {category}</h3>
