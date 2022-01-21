@@ -26,7 +26,7 @@ describe("Pruebas en funciones de heroes", () => {
         expect(heroes).toEqual(heroesData);
     });
 
-    test("debe retornar un arreglo con los héroes de marvel ", () => {
+    test("debe retornar un arreglo con los héroes de marvel", () => {
         const owner = "Marvel";
         const heroes = getHeroesByOwner(owner);
 
