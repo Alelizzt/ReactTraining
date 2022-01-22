@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 //import { CounterApp } from "./components/01-useState/CounterApp";
-import { CounterWithCustomHook } from "./components/01-useState/CounterWithCustomHook";
+// import { CounterWithCustomHook } from "./components/01-useState/CounterWithCustomHook";
+import SimpleForm from "./components/02-useEffect/SimpleForm";
 // import { HookApp } from "./HookApp";
 
-ReactDOM.render(<CounterWithCustomHook />, document.getElementById("root"));
+ReactDOM.render(<SimpleForm />, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
