@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { CallbackHook } from "./components/06-memos/CallbackHook";
+import { Padre } from "./components/07-tarea-memo/Padre";
+// import { CallbackHook } from "./components/06-memos/CallbackHook";
 // import { MemoHook } from "./components/06-memos/MemoHook";
 // import FormWithCustomHook from "./components/02-useEffect/FormWithCustomHook";
 // import { MultipleCustomHooks } from "./components/03-examples/MultipleCustomHooks";
@@ -13,7 +14,7 @@ import { CallbackHook } from "./components/06-memos/CallbackHook";
 // import SimpleForm from "./components/02-useEffect/SimpleForm";
 // import { HookApp } from "./HookApp";
 
-ReactDOM.render(<CallbackHook />, document.getElementById("root"));
+ReactDOM.render(<Padre />, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
