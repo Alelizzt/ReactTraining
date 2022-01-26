@@ -20,7 +20,7 @@ export const TodoListItem = ({ todo, index, handleDelete, handleToggle }) => {
     );
 };
 TodoListItem.propTypes = {
-    todos: PropTypes.array,
+    todo: PropTypes.array,
     index: PropTypes.number,
     handleDelete: PropTypes.func,
     handleToggle: PropTypes.func,
