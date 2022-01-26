@@ -21,8 +21,10 @@ describe("Pruebas en el custom hook useForm", () => {
         const [, handleInputChange] = result.current;
         act(() => {
             handleInputChange({
-                target: "name",
-                value: "Lorena",
+                target: {
+                    name: "name",
+                    value: "Lorena",
+                },
             });
         });
 
