@@ -1,6 +1,9 @@
 import { useParams, Navigate, useNavigate } from "react-router-dom";
 import { getHeroeById } from "../../selectors/getHeroesById";
 import { useMemo } from "react";
+import { heroImages } from "./../../helpers/heroImages";
+
+// import batman from "../../assets/dc-batman.jpg"; //Importación de un recurso estático
 
 export const HeroScreen = () => {
     const { heroeId } = useParams();
@@ -27,7 +30,9 @@ export const HeroScreen = () => {
         <div className=" row mt-5">
             <div className="col-4">
                 <img
-                    src={imagePath}
+                    // src={imagePath} // desde public/assets
+                    // src={batman}
+                    src={heroImages(`./${heroeId}.jpg`)}
                     alt={superhero}
                     className="img-thumbnail animate__animated animate__fadeInLeft"
                 />
