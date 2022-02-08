@@ -48,10 +48,7 @@ export const NoteScreen = () => {
 
                 {note.url && (
                     <div className="notes__image">
-                        <img
-                            src="https://naigate.com/properties/wp-content/uploads/2020/12/Land-for-Sale-NaiGate.jpg"
-                            alt="land"
-                        />
+                        <img src={note.url} alt="land" />
                     </div>
                 )}
             </div>
