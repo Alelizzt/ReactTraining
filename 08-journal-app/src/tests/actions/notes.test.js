@@ -5,8 +5,16 @@ import {
     startLoadingNotes,
     startNewNote,
     startSaveNotes,
+    startUploading,
 } from "./../../actions/notes";
 import { types } from "./../../types/types";
+import { fileUpload } from "./../../helpers/fileUpload";
+
+jest.mock("./../../helpers/fileUpload", () => ({
+    fileUpload: jest.fn(() => {
+        return "https://hola-mundo.com/thing.jpg";
+    }),
+}));
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
@@ -14,6 +22,13 @@ const mockStore = configureStore(middlewares);
 const initState = {
     auth: {
         uid: "TESTING",
+    },
+    notes: {
+        active: {
+            id: "5c9E3nFrGTC6JBOAdrUB",
+            title: "Hola",
+            body: "bb",
+        },
     },
 };
 
@@ -74,7 +89,7 @@ describe("Pruebas con las acciones de notes", () => {
 
     test("debe de actualizar la nota", async () => {
         const note = {
-            id: "MS04wJ9q1ffUEKIqjfo2",
+            id: "5c9E3nFrGTC6JBOAdrUB",
             title: "titulo",
             body: "body",
         };
@@ -86,5 +101,16 @@ describe("Pruebas con las acciones de notes", () => {
         const docRef = await db.doc(`/TESTING/journal/notes/${note.id}`).get();
 
         expect(docRef.data().title).toBe(note.title);
+    });
+
+    test("startUploading debe de actualizar el url del entry", async () => {
+        const file = new File([], "foto.jpg");
+        await store.dispatch(startUploading(file));
+
+        const docRef = await db
+            .doc("/TESTING/journal/notes/5c9E3nFrGTC6JBOAdrUB")
+            .get();
+
+        expect(docRef.data().url()).toBe("https://hola-mundo.com/thing.jpg");
     });
 });
