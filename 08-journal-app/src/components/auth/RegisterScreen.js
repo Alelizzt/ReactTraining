@@ -30,7 +30,7 @@ export const RegisterScreen = () => {
 
             return false;
         } else if (!validator.isEmail(email)) {
-            dispatch(setError("Email isn't valid"));
+            dispatch(setError("Email is not valid"));
 
             return false;
         } else if (password !== password2 && password.length < 5) {
