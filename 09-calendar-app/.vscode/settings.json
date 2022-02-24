@@ -1,3 +1,7 @@
 {
+    "editor.wordWrap": "on",
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
     "git.ignoreLimitWarning": true
 }
